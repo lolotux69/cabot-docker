@@ -4,13 +4,13 @@
 #
 # VERSION 1.1
 
-FROM debian:jessie
+FROM debian:buster
 
 MAINTAINER lolotux
 
 
 # Prepare
-RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && echo "deb http://debian.ens-cachan.fr/ftp/debian/ jessie main contrib non-free" > /etc/apt/sources.list \
+RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && echo "deb http://debian.ens-cachan.fr/ftp/debian/ buster main contrib non-free" > /etc/apt/sources.list \
 && apt-get update && apt-get install -y python-pip python-dev gunicorn nodejs npm curl libpq-dev libldap2-dev libsasl2-dev
 
 RUN pip install --upgrade pip && pip install setuptools --upgrade
