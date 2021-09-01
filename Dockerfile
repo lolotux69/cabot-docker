@@ -49,6 +49,7 @@ ENV DJANGO_SECRET_KEY 2FL6ORhHwr5eX34pP9mMugnIOd3jzVuT45f7w430Mt5PnEwbcJgma0q8zU
 ENV WWW_HTTP_HOST localhost
 ENV WWW_SCHEME http
 
+RUN unlink /usr/bin/node
 RUN ["ln","-s","/usr/bin/nodejs","/usr/bin/node"]
 
 EXPOSE 5000
