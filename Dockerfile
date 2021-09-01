@@ -14,7 +14,7 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
 && apt-get update && apt-get install -y python3-pip python3-dev gunicorn nodejs npm curl libpq-dev libldap2-dev libsasl2-dev
 
 RUN pip3 install gitsome
-RUN pip install --upgrade pip && pip install setuptools==44.1.1 --upgrade
+RUN pip install --upgrade pip && pip install setuptools --upgrade
 
 # Deploy cabot
 ADD ./ /opt/cabot/
