@@ -11,9 +11,9 @@ MAINTAINER lolotux
 
 # Prepare
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && echo "deb http://debian.ens-cachan.fr/ftp/debian/ bullseye main contrib non-free" > /etc/apt/sources.list \
-&& apt-get update && apt-get install -y python-pip python-dev gunicorn nodejs npm curl libpq-dev libldap2-dev libsasl2-dev
+&& apt-get update && apt-get install -y python3-pip python3-dev gunicorn nodejs npm curl libpq-dev libldap2-dev libsasl2-dev
 
-RUN pip install --upgrade pip && pip install setuptools --upgrade
+RUN pip install --upgrade pip && pip install setuptools==44.1.1-1 --upgrade
 
 # Deploy cabot
 ADD ./ /opt/cabot/
