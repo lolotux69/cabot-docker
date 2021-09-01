@@ -13,8 +13,9 @@ MAINTAINER lolotux
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && echo "deb http://debian.ens-cachan.fr/ftp/debian/ bullseye main contrib non-free" > /etc/apt/sources.list \
 && apt-get update && apt-get install -y python3-pip python3-dev gunicorn nodejs npm curl libpq-dev libldap2-dev libsasl2-dev
 
-RUN pip3 install gitsome
 RUN pip install --upgrade pip && pip install setuptools --upgrade
+RUN pip install gitsome
+RUN pip install celery
 
 # Deploy cabot
 ADD ./ /opt/cabot/
