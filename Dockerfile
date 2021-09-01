@@ -20,6 +20,7 @@ RUN pip install --upgrade pip && pip install setuptools --upgrade
 ADD ./ /opt/cabot/
 
 # Install dependencies
+RUN export PYTHONPATH=/usr/bin/python
 RUN pip install -e /opt/cabot/
 RUN npm install --no-color -g coffee-script less@1.3 --registry http://registry.npmjs.org/
 
